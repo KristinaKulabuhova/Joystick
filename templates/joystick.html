@@ -1,0 +1,26 @@
+<!doctype html> <html lang="en">
+<head>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+  <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+  <script src="https://hammerjs.github.io/dist/hammer.js"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
+  <link rel="stylesheet" href="../static/css/main.css">
+  <style type="text/css">
+   h1 {
+    font-size: 200%;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #333366;
+   }
+  </style>
+</head>
+<body class="noselect" onload="init();">
+  <div class="container space-top">
+    <h1 class="center blue-text thin">JOYSTICK</h1>
+    <div class="center-align">
+      <canvas id="joystick" height="300" width="300"> </canvas>
+    </div>
+    <p id="xVal" class="light">X: </p>
+    <p id="yVal" class="light">Y: </p>
+  </div>
+</body>
+</html>
