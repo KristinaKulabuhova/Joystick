@@ -1,4 +1,3 @@
-
 function init() {
   // easal stuff goes hur
   var xCenter = 150;
@@ -53,7 +52,27 @@ function init() {
 
     psp.alpha = 0.5;
 
+
+    const url = '/post';
+    const data = { x: psp.x,
+                  y: psp.y};
+
     stage.update();
+
+    try {
+    const response = fetch(url, {
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+    });
+   // const json = response.json();
+    console.log(psp.x);
+    //console.log('Успех:', JSON.stringify(json));
+    } catch (error) {
+      console.error('Ошибка:', error);
+    }
   });
 
   mc.on("panend", function(ev) {
@@ -72,4 +91,5 @@ function calculateCoords(angle, distance) {
 
   return coords;
 }
+
 
